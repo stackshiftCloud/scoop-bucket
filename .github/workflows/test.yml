@@ -37,3 +37,21 @@ jobs:
           if ($versionOutput -notmatch "CLI\s+1\.0\.2") {
             throw "Installed binary did not report v1.0.2"
           }
+
+      - name: Install Scoop
+        shell: pwsh
+        run: |
+          $commit = "b0ee913725139b816f9178163af0aecdba07a7ed"
+          $url = "https://raw.githubusercontent.com/" +
+            "ScoopInstaller/Install/$commit/install.ps1"
+          $installer = Join-Path $env:RUNNER_TEMP "install-scoop.ps1"
+          Invoke-WebRequest $url -OutFile $installer
+          & $installer -RunAsAdmin
+          "$env:USERPROFILE\scoop\shims" | Out-File $env:GITHUB_PATH
+
+      - name: Install from bucket
+        shell: pwsh
+        run: |
+          scoop bucket add stackshift $env:GITHUB_WORKSPACE
+          scoop install stackshift
+          stackshift version
