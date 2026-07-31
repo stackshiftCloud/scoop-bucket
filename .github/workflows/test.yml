@@ -52,6 +52,7 @@ jobs:
       - name: Install from bucket
         shell: pwsh
         run: |
-          scoop bucket add stackshift $env:GITHUB_WORKSPACE
+          scoop bucket add stackshift `
+            https://github.com/stackshiftCloud/scoop-bucket
           scoop install stackshift
           stackshift version
