@@ -33,6 +33,7 @@ jobs:
           $directory = Join-Path $env:RUNNER_TEMP "stackshift"
           Expand-Archive (Join-Path $env:RUNNER_TEMP "64bit.zip") $directory
           $output = & (Join-Path $directory "stackshift.exe") version
-          if ($output -notmatch "1.0.2") {
+          $versionOutput = $output -join "`n"
+          if ($versionOutput -notmatch "CLI\s+1\.0\.2") {
             throw "Installed binary did not report v1.0.2"
           }
