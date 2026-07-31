@@ -1,0 +1,30 @@
+{
+  "version": "1.0.2",
+  "description": "Manage StackShift from the command line",
+  "homepage": "https://stackshift.cloud",
+  "license": "Proprietary",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/stackshiftCloud/stackshift-cli/releases/download/v1.0.2/stackshift_windows_amd64.zip",
+      "hash": "9889fae7a9dae28a1ef2012eff27d6e7e0b935e706a29aaf7f0ff38b5eefef2e"
+    },
+    "arm64": {
+      "url": "https://github.com/stackshiftCloud/stackshift-cli/releases/download/v1.0.2/stackshift_windows_arm64.zip",
+      "hash": "a85cf0893155b9e330ef41305b8f466073fc7c3e1863d9475098daf3cf1d521a"
+    }
+  },
+  "bin": "stackshift.exe",
+  "checkver": {
+    "github": "https://github.com/stackshiftCloud/stackshift-cli"
+  },
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/stackshiftCloud/stackshift-cli/releases/download/v$version/stackshift_windows_amd64.zip"
+      },
+      "arm64": {
+        "url": "https://github.com/stackshiftCloud/stackshift-cli/releases/download/v$version/stackshift_windows_arm64.zip"
+      }
+    }
+  }
+}
