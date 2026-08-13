@@ -34,8 +34,9 @@ jobs:
           Expand-Archive (Join-Path $env:RUNNER_TEMP "64bit.zip") $directory
           $output = & (Join-Path $directory "stackshift.exe") version
           $versionOutput = $output -join "`n"
-          if ($versionOutput -notmatch "CLI\s+1\.0\.2") {
-            throw "Installed binary did not report v1.0.2"
+          $expected = [regex]::Escape($manifest.version)
+          if ($versionOutput -notmatch "CLI\s+$expected") {
+            throw "Installed binary did not report v$($manifest.version)"
           }
 
       - name: Install Scoop
