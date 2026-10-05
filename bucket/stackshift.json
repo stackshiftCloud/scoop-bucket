@@ -1,19 +1,19 @@
 {
-    "version": "1.0.12",
+    "version": "1.0.13",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/stackshiftCloud/stackshift-cli/releases/download/v1.0.12/stackshift_windows_amd64.zip",
+            "url": "https://github.com/stackshiftCloud/stackshift-cli/releases/download/v1.0.13/stackshift_windows_amd64.zip",
             "bin": [
                 "stackshift.exe"
             ],
-            "hash": "4e76fca659d3094a7708b98af62812273088b746bd502fda63b3897aa688a794"
+            "hash": "337f3dde9bca6b4f8b3c78002d17807265583d3dcb1ac5bf4aa7a230a59e082f"
         },
         "arm64": {
-            "url": "https://github.com/stackshiftCloud/stackshift-cli/releases/download/v1.0.12/stackshift_windows_arm64.zip",
+            "url": "https://github.com/stackshiftCloud/stackshift-cli/releases/download/v1.0.13/stackshift_windows_arm64.zip",
             "bin": [
                 "stackshift.exe"
             ],
-            "hash": "75fc0a32ad2ffbb7a90c99594bd62ed7fb8d61de0ec7b460b5ab69002f7dfa39"
+            "hash": "3ae29d2697a6598e9c044295fb237ae003cb34d540716de548e130c426e3be41"
         }
     },
     "homepage": "https://stackshift.cloud",
